@@ -1,0 +1,11 @@
+Install Windows 7 from USB boot - Click "Install now" and choose "Custom / Advanced"
+You should see "Where do you want to install Windows?" Click on "Drive options (advanced)"
+Click on all the partitions (if any) one by one and delete them (You won't be able to click on and delete "Disk 0 Unallocated Space")
+You should be left with  "Disk 0 Unallocated Space" and it should show the capacity of your hard drive. Click "Next"
+Windows 7 should start to install. Wait, then follow the prompts to set a user name etc. and keep any recommended settings if asked.
+When it's finished, click on the little Windows icon (bottom left) and type "disk management". Choose "Create and format hard disk partitions" from the search results.
+Wait for the "Disk Management" window to load, 
+In the lower half of the window, you should see 2 rectangles, each with a blue bar above it. Right-click on the one labled (C:), then left-click on ""Shrink Volume".
+Keep the defaults, and click "Shrink". This will make space for us to install another Windows 7 alongside the one we've already installed (the reason will become clear later).
+When it's finished, you should see a new partition showing "Unallocated" space.
+Close the "Disk Management" window, insert the Windows 7 bootable USB stick you used before, and reboot the computer with the USB stick. 
