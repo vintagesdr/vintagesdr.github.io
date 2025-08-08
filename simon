@@ -1,3 +1,7 @@
+layout: page
+title: "simon-page"
+permalink: /simon
+
 Install Windows 7 from USB boot - Click "Install now" and choose "Custom / Advanced"
 You should see "Where do you want to install Windows?" Click on "Drive options (advanced)"
 Click on all the partitions (if any) one by one and delete them (You won't be able to click on and delete "Disk 0 Unallocated Space")
