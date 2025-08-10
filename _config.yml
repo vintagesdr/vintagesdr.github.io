@@ -1,4 +1,3 @@
 title: Octocat's homepage title
 name: My Site name
-theme: jekyll-theme-dinky
-
+remote_theme: jekyll/minima
