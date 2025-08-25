@@ -1,10 +1,1 @@
-#
 
-title: Octocat's homepage title
-name: My Site name
-#remote_theme: jekyll/minima@1e8a445
-remote_theme: jekyll/minima
-plugins:
-  - jekyll-remote-theme
-minima:
-  skin: dark # or auto if you want it to switch with your system settings.
