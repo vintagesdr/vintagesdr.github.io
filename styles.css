@@ -8,7 +8,7 @@
   height: 100%; /* Spans the full height of the viewport */
   background-color: #333;
   color: green;
-  padding: 20px;
+  padding: 420px;
   overflow: auto; /* Adds a scrollbar if content exceeds height */
 }
 
