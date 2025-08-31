@@ -25,4 +25,15 @@ Keep the defaults, and click "Shrink". This will make space for us to install an
 When it's finished, you should see a new partition showing "Unallocated" space. Close the "Disk Management" window. <br>
  <br>
  Insert the Windows 7 bootable USB stick you used before, and reboot the computer. <br>
+  As before, install Windows 7 from USB boot - Click "Install now" and choose "Custom / Advanced"<br>
+You should see "Where do you want to install Windows?" and the new "Disk 0 Unallocated Space" should be showing.<br>
+Click on it, then click"Next"
+Windows 7 should start to install. Wait, then follow the prompts to set a user name etc. You may wish to give this version a different user name (for example "John 2) - but it doesn't matter,
+and you can change it later on.
+When it's finished, remove your USB boot drive and reboot the computer.
+If all has gone according to plan, you should be presented with a boot manager, and 2 versions of Windows. Once we start installing things, it will be useful to be able to identify them, so let's rename the first one (this doesn't seem to work AFTER Dragon OS has been installed, so do it before);
+Choose the top one, press "Enter" and let it load. When it's finished, click on the little Windows icon (bottom left) and type "cmd". In the search results, there should be one entry. "cmd". Right-click on it, and left-click on "Run as administrator". Allow changes, and enter your password if you set one whilst installing Windows. You should be presented with a black command window with white text. Type
+>bcdedit /set {current} description "Windows 7 Radio"
+(Copy it exactly, but without typing the > which should already be there)
+Press enter, then reboot the computer. You should see the new description. Boot into "Windows 7 Radio".
   
