@@ -8,11 +8,11 @@
   height: 100%; /* Spans the full height of the viewport */
   background-color: #333;
   color: green;
-  padding: 420px;
+  padding: 20px;
   overflow: auto; /* Adds a scrollbar if content exceeds height */
 }
 
 .content {
-  margin-right: 270px; /* Push content to the left of the fixed sidebar */
+  margin-right: 470px; /* Push content to the left of the fixed sidebar */
   padding: 20px;
 }
