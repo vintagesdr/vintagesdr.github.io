@@ -1,0 +1,9 @@
+ body {
+      background-color: white; /* Default light mode */
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: black; /* Dark mode */
+      }
+    }
