@@ -1,9 +1,9 @@
  body {
-      background-color: white; /* Default light mode */
+      background-color: red; /* Default light mode */
     }
 
-    @media (prefers-color-scheme: dark) {
+     @media only screen and (max-width: 800px) {
       body {
-        background-color: black; /* Dark mode */
+        background-color: green; /* Background changes below 800px */
       }
     }
