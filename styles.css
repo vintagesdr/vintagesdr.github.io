@@ -14,7 +14,7 @@ details > ul {
   display: none;
   position: absolute;
   top: 100%;
-  left: 100%;
+  float: right;
   background: white;
   border: 1px solid silver;
   padding: 0.5rem;
