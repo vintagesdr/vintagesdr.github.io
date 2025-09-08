@@ -5,8 +5,8 @@ details {
 }
 
 details > summary {
- top: 0px;
- right: 0px
+ top: 100%;
+ left: 100%;
  padding: 0.5rem;
   background: red;
   cursor: pointer;
