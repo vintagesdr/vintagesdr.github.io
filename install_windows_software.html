@@ -23,9 +23,101 @@
  
 <div class="body-text">
   <!-- body content -->
- This is where the content should go.<br>
- This is the second line<br>
- This is what happens if I try to type too much on one line.This is the third line, but it might go over onto the fourth.<br>
+If you're going to do it on the Windows 7 computer, connect it to the internet (either WiFi or Ethernet). I used Ethernet - connecting to WiFi could be tricky because of modern security.
+ Once it's connected, you might get a "pop-up" window asking you about the type of network. I would choose "Public" as there will be very little security on our system. <br>
+Click on the "Internet Explorer" icon.
+You will probably get a message saying "Internet Explorer cannot display the webpage". In the address bar, type
+https://www.firefox.com/en-GB/
+and wait a few seconds. If you are told that there is a problem with the website's security certificate, ignore it and click on 
+"Continue to this website (not recommended). <br>
+The page probably won't display correctly, but click on "Desktop" on the left side of the page. Scroll down, and look for the blue rectangle which says
+"Download Firefox ESR 32 bit" and click on it.
+If you get told again that there is a problem with the website's security certificate, click on "Continue to this website (not recommended)" again.
+You should get a "File Download" box. Click on "Save" and "Save" again at the next prompt.<br>
+Once it's finished downloading, close any open windows, and navigate to your "Downloads" folder..
+You should see the Firefox programme which we just downloaded. Double-click on it, then click on "Run".
+Allow changes, then click through "Next" and "Install", accepting any defaults.
+Once it's finished, open Firefox (double-click on the icon on the Desktop). You might see an option to "Sign In" <br>
+You are strongly advised to treat this computer as INSECURE and never to sign in to ANYTHING on it!
+Skip through all the steps, then click on "Start browsing" <br>
+
+Whether you are going to download the software we need using another computer and transfer it by USB memory stick, or download it directly using the Windows 7 computer, we are now ready to start. Microsoft doesn't support Windows 7 any more, so we need to get some updates and some other programmes in order to run our SDR software.
+
+Go to the following pages and download these;
+Choose the Windows 7 64bit (x64, not x86, not embedded) options for both files (near the bottom of the page in both cases, at the time of writing), clicking on the "Download" button on the right of each page. A "download" pop-up window should appear. Double-click on the blue text which begins "Windows6.1-kb..." to start the download. Click "Save" and "Save"
+KB4474419 updates
+https://www.catalog.update.microsoft.com/Search.aspx?q=4474419%20windows%207
+KB4490628 updates 
+https://www.catalog.update.microsoft.com/Search.aspx?q=Windows%207%20x64%20KB4490628
+If you downloaded them onto a memory stick, you might like to copy them into the "Downloads" directory of your Windows 7 computer. However, keep them on your memory stick as well (the same goes for all our downloads. If you get something wrong and have to wipe your system and start again, you don't want to have to download everything again. Equally, if you're downloading on your Windows 7 machine, it would be a good idea to copy everything onto a memory stick as back-up for the same reason).
+Install both updates (double-click on the files), then reboot your computer. The updates should run, then the computer should restart, and re-configure itself. To save time, you can install BOTH updates, one after the other, without rebooting in between.
+We also need to download and install the
+.NET framework v4.8 
+https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer
+and the 
+.NET framework v5
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-5.0.2-windows-x86-installer
+and a Visual C++ redistributable package (VC_redist.x86.exe)
+https://aka.ms/vs/17/release/vc_redist.x86.exe
+Put them in your "Downloads" directory, and install them (One file name starts "NDP48" and the other "windowsdesktopruntime")
+With the 2 windows KB updates, the two .NET installations and the Visual C++ redistributable package, we have finished preparing Windows 7.
+Now we can start downloading the SDR software.
+
+We're going to install SDR Sharp version 1830. There are lots of versions, some older and some newer. Some versions won't run on Windows 7, not all "plug-ins" work with all versions - and I like some better than others. I find v1830 works very well on this system.
+Download it from here
+https://www.iz3mez.it/software/SDRSharp/
+but DON'T be tempted to try to install it yet! We also need the RTL-SDR hardware drivers.
+Download Zadig from here
+https://zadig.akeo.ie/
+and some special RTL-SDR drivers from here
+http://github.com/rtlsdrblog/rtl-sdr-blog/releases/latest/download/Release.zip
+Copy them to your Downloads folder. (You should have 8 files / folders in there now)
+This is where things could get tricky - be careful! Make sure your USB memory stick is NOT plugged in, then plug in your RTL-SDR hardware dongle.
+Note that a pop-up saying "Device driver software was not successfully installed" appears. That's exactly what we need at this stage!
+Run "Zadig" (if it asks, we don't need to allow it to check for application updates online)
+Click on "Options" and make sure "List all devices" is checked.
+In the drop-down list, choose "Bulk-In, Interface (Interface 0) is selected - nothing else!
+To the right of the green arrow, there is a selection box. Scroll through until you see
+"WINUSB (v6.1.7600.16385)" and choose it.
+Double-click on the big "Install Driver"
+It may seem to freeze for a few seconds, and maybe even say that it's not responding. Wait, and hopefully you will get a message telling you that the driver has installed successfully.
+Check that both boxes to the left and the right of the green arrow are showing the "WINUSB" driver you selected.
+Now, finally, we can install the SDR Sharp v1830 software. It's in a "Zip" folder - right-click on it, and in the drop-down menu choose "Extract All". Accept the default option and click on "Extract".
+In this unzipped folder, you should see a blue icon with "SDRSharp" next to it. Double click it, and if all has gone well, it should load, but it won't work yet. If you get an error message instead, don't panic but try to research the error on the internet or go through the list again - it's easy to miss something. For example, if you see
+"The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing..." it might mean that you've forgotten to install the Visual C++ redistributable package (VC_redist.x86.exe).
+The error "To run this application you must install .NET" may mean you've forgotten to install one of the two .NET installations.
+Try to correct the errors and try to run SDR Sharp again. If you're asked if you'd like to download anything from the internet, the chances are it won't work because Microsoft don't support Windows 7 any more. Download anything you've missed manually, according to these instructions.
+If the error message changes, it may be a sign that you've corrected one error and you now need to correct another one - that's progress!
+
+With the dongle still plugged in, once you can run SDRSharp, look at the panels on the left. About half way down, there's a drop-down menu. 
+The blue rectangle probably says "Source: Airspy. R2 / mini" and the grey rectangle underneath also says  "Airspy. R2 / mini". Click on the drop-down arrow to the right, and select ""RTL-SDR USB"
+As mentioned above, this won't work yet - but click on the "Play" icon on the top row.. You will probably see "No device available". We need to do one more thing.
+In your "Downloads" folder, we have one ZIP folder which we haven't used yet, called "Release". Right-click on it and choose "Extract All", accept the default settings and click "extract".
+Inside, you should see 2 folders - "x64" and "x86". Open "x86" and find "rtlsdr.dll" and copy it (right-click and choose copy).
+Now close the folder and go back to the SDR Sharp folder. Right-click anywhere in the folder and click "paste". You should now see the rtlsdr.dll file in amongst other .dll files.
+Now double-click on the blue "SDRSharp" icon, and change the source to "RTL-SDR USB like you did before. Now when you press the "play" button, it should work and you should hear a hiss!
+Make sure an aerial's connected to your dongle, and spend some time getting to know the software. Try tuning to a strong local or national VHF FM station to make sure everything's working as expected. Note that the RF gain might be set to "zero". Click on the "gear" icon near the volume control, and set the "RF gain" to about half to three quarters.
+When you're ready, come back and we'll install a couple of plug-ins.
+
+You can see the modes in SDR Sharp (AM, NFM, WFM, sideband etc.). Radio amateurs are interested in other modes, besides these. Wouldn't it be nice if e could add DMR and TETRA to the list? Fortunately, we can - very easily - by using "plug-ins", which people have written. 
+We will use the "simple DMR" and the TETRA plugins to give us these two extra modes.
+Many other plugins exist, and may or may not work with this particular version of  SDR Sharp - it's a case of "try it and see".
+Different versions of SDR Sharp have different ways of adding these plug-ins. You may see references to a "magic line" and an "xml" file.
+The version we are using, version 1830, doesn't use any of this, so you can safely ignore such references. 
+Download the "simple DMR plug-in from here (click on "dmr.zip" and then the "download" arrow near the top right of the screen, and save the file
+https://forums.radioreference.com/threads/sdr-simple-dmr-plugin.456050/
+and the TETRA plug-in from here
+https://github.com/vgpastor/SDR-Tetra-Plugin/releases
+(just click on, and save, the 2 .dll files -  SDRSharp.Tetra.dll and tetraVoiceDec.dll)
+When you've got them in your Downloads folder, go back to SDR Sharp and have a look in the "Hamburger" menu - the three horizontal bars near the top left of the screen. That's where the two new modes should appear once we've added them.
+Close SDR Sharp, go to your Downloads folder, and right-click on the "dmr" zip folder, and click "extract all". Accept the defaults and click "Extract".
+Find the unzipped DMR folder, and open it. Ignore the "magic_line" and select the 2 .dll files (left-click on one .dll file, then hold down the "ctrl" (control) button on your keyboard, and left-click on the other .dll file. When they're both selected, let go of the "ctrl" button, right-click and choose "copy".
+Go back to the SDR Sharp folder and open it, and inside look for a folder called "Plugins". Double-click on it to open it - it should be empty. Right-click and choose "Paste" to copy the two .dll files into the folder..
+Now go to the TETRA folder, open it, and copy the two .dll files from there also into the SDR Sharp plug-in folder. - so you now have two DMR .dlls and two TETRA .dlls in there.
+Run SDR Sharp again, and look in the "Hamburger" menu. You should see two new entries at the bottom - "Simple DMR" and "TETRA Demodulator"
+Select either one, and click in the little square in their respective windows to activate them.
+
+<br>
 </div>
 </div>
 
