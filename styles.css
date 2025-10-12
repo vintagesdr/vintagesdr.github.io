@@ -7,7 +7,7 @@ details {
 
 details > summary {
  top: 100%;
- left: 100%;
+ left: 500%;
  padding: 0.5rem;
   background: green;
   cursor: pointer;
